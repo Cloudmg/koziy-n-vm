@@ -1,0 +1,182 @@
+/* --- БАЗОВІ НАЛАШТУВАННЯ --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif; /* Сучасний шрифт без засічок */
+    background-color: #f4f6f8; /* Приємний світло-сірий фон (не білий!) */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- ШАПКА --- */
+.top-header {
+    background-color: #2c3e50; /* Темно-синій професійний колір */
+    color: #fff;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.top-header h1 { font-size: 1.8rem; margin-bottom: 5px; }
+.top-header p { opacity: 0.8; font-size: 0.9rem; }
+
+/* --- МАКЕТ (2 колонки) --- */
+.layout-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    gap: 30px;
+}
+
+/* --- БІЧНА ПАНЕЛЬ --- */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+/* Липке меню (їде за скролом) */
+.sidebar-sticky {
+    position: sticky;
+    top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px; /* Округлені кути */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* М'яка тінь */
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eef2f5;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #555;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Іконки Material Design */
+.nav-link .material-icons { font-size: 20px; color: #7f8c8d; }
+
+/* Ховер ефект для меню */
+.nav-link:hover {
+    background-color: #e3f2fd; /* Світло-блакитний */
+    color: #1976d2; /* Синій */
+}
+.nav-link:hover .material-icons { color: #1976d2; }
+
+.sidebar-footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+}
+
+/* --- ОСНОВНИЙ КОНТЕНТ --- */
+.main-content {
+    flex-grow: 1;
+}
+
+/* Картки з текстом */
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    margin-bottom: 30px; /* Відступ між блоками */
+    border: 1px solid #eef2f5;
+}
+
+.card h2 {
+    color: #1976d2; /* Синій заголовок */
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #eef2f5;
+    padding-bottom: 10px;
+}
+
+.card h3 {
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.card p {
+    margin-bottom: 15px;
+    color: #4a4a4a;
+}
+
+/* Історичні блоки */
+.history-block {
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #1976d2;
+}
+
+/* Список */
+.styled-list {
+    list-style: none;
+}
+.styled-list li {
+    background: #f9fafb;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+}
+.styled-list strong { color: #2c3e50; }
+
+/* Таблиця */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Щоб кути не обрізались */
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eef2f5;
+}
+
+.styled-table th {
+    background-color: #2c3e50;
+    color: #fff;
+    font-weight: 600;
+}
+
+.styled-table tr:hover { background-color: #f9f9f9; }
+
+/* --- АДАПТИВНІСТЬ --- */
+@media (max-width: 768px) {
+    .layout-container { flex-direction: column; }
+    .sidebar { width: 100%; }
+    .sidebar-sticky { position: static; }
+}
